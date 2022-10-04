@@ -7,7 +7,7 @@ from Cython.Build import cythonize;
 from Cython.Compiler import Options
 Options.infer_types = True
 Options.language_level = 3
-extensions = [Extension('*',['jukebox/*'])];
+extensions = [Extension('*',['*'])];
 
 setup(
     name="jukebox",
