@@ -1,5 +1,6 @@
 import os
-
+import pyximport
+pyximport.install(pyimport=True)
 import pkg_resources
 from setuptools import Extension, setup, find_packages
 from Cython.Build import cythonize;
