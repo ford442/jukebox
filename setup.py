@@ -1,7 +1,12 @@
 import os
 
 import pkg_resources
-from setuptools import setup, find_packages
+from setuptools import Extension, setup, find_packages
+from Cython.Build import cythonize;
+from Cython.Compiler import Options
+Options.infer_types = True
+Options.language_level = 3
+extensions = [Extension('jukebox',['jukebox'])];
 
 setup(
     name="jukebox",
@@ -16,5 +21,6 @@ setup(
             open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
         )
     ],
+    ext_modules=cythonize(extensions),
     include_package_data=True
 )
